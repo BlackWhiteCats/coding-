@@ -5,13 +5,13 @@ print('VAMOS JOGAR PAR OU IMPAR!')
 print('-=' * 15)
 while True:
     nn2 = randint(1, 10)
-    p1 = str(input('Par ou ímpar? [P/I]: ')).upper()
-    if p1 == 'P' or p1 == 'I':
-        print(f'Você escolheu {p1}!')
-    else:
-        print('Não reconheci seu comando! Tente novamente!')
-        if True:
-            break
+    p1 = ' '
+    while p1 not in 'PI':
+        p1 = str(input('Par ou ímpar? [P/I]: ')).strip().upper()[0]
+    if p1 == 'P':
+        print('Você escolher Par!')
+    elif p1 == 'I':
+        print('Você escolher Ímpar!')
     n1 = int(input('Escolha um número de 1 a 10: '))
     soma = (n1 + nn2) % 2
     print('---' * 15)
@@ -40,7 +40,4 @@ while True:
             print('Você PERDEU!')
             print('-=-' * 15)
             break
-if cont == 0:
-    print('Você não ganhou nenhuma vez!')
-else:
-    print(f'Você ganhou {cont} vezes consecutivas!')
+print(f'GAME OVER! Você ganhou {cont} vezes consecutivas!')
